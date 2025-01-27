@@ -1,0 +1,14 @@
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/bin/Debug/net8.0/PickRandomCards
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/bin/Debug/net8.0/PickRandomCards.deps.json
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/bin/Debug/net8.0/PickRandomCards.runtimeconfig.json
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/bin/Debug/net8.0/PickRandomCards.dll
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/bin/Debug/net8.0/PickRandomCards.pdb
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/PickRandomCards.GeneratedMSBuildEditorConfig.editorconfig
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/PickRandomCards.AssemblyInfoInputs.cache
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/PickRandomCards.AssemblyInfo.cs
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/PickRandomCards.csproj.CoreCompileInputs.cache
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/PickRandomCards.dll
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/refint/PickRandomCards.dll
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/PickRandomCards.pdb
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/PickRandomCards.genruntimeconfig.cache
+/home/syed/Desktop/Coursera/dot-net-head-start/PickRandomCards/obj/Debug/net8.0/ref/PickRandomCards.dll
