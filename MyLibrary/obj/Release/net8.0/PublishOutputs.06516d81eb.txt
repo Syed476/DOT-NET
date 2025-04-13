@@ -1,0 +1,5 @@
+/home/syed/Desktop/DOT-NET/MyLibrary/publish/MyLibrary
+/home/syed/Desktop/DOT-NET/MyLibrary/publish/MyLibrary.dll
+/home/syed/Desktop/DOT-NET/MyLibrary/publish/MyLibrary.deps.json
+/home/syed/Desktop/DOT-NET/MyLibrary/publish/MyLibrary.runtimeconfig.json
+/home/syed/Desktop/DOT-NET/MyLibrary/publish/MyLibrary.pdb
