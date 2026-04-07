@@ -33,6 +33,9 @@ namespace Ch02
             Foo(in x);
             Bar(x);
             Bar(in x);
+
+            Console.WriteLine("=== ref Locals ===");
+            RefLocalDemo();
         }
 
         static void Foo(SomeBigStruct a) => Console.WriteLine("Foo");
@@ -44,6 +47,15 @@ namespace Ch02
         {
             public decimal A,B,C,D,E,F,G;
         }
-        
+
+        public static void RefLocalDemo()
+        {
+            int[] numbers = { 0, 1, 2, 3, 4 };
+            ref int numRef = ref numbers[2];
+            numRef *= 10;
+            Console.WriteLine(numbers[2]);  // 20
+            Console.WriteLine(numRef);      // 20
+        }
+
     }
 }
