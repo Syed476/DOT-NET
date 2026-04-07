@@ -1,103 +1,65 @@
 namespace Ch03
 {
-    // ── 1. Fields, constructors, methods ─────────────────────────────────────
-    public class Panda
-    {
-        public string Name;
-        public static int Population;          // shared across all instances
-
-        public Panda(string name)
-        {
-            Name = name;
-            Population++;
-        }
-
-        public void Greet() => Console.WriteLine($"Hi, I'm {Name}");
-    }
-
-    // ── 2. Properties (encapsulate a backing field) ───────────────────────────
-    public class Stock
-    {
-        decimal _price;
-
-        public decimal Price
-        {
-            get => _price;
-            set => _price = value < 0 ? throw new ArgumentException("Negative price") : value;
-        }
-
-        // Auto-property — compiler generates the backing field
-        public string Symbol { get; set; } = "";
-    }
-
-    // ── 3. Indexer ────────────────────────────────────────────────────────────
-    public class Sentence
-    {
-        string[] _words = "The quick brown fox".Split();
-
-        public string this[int index]
-        {
-            get => _words[index];
-            set => _words[index] = value;
-        }
-    }
-
-    // ── 4. Inheritance ────────────────────────────────────────────────────────
-    public class Asset
-    {
-        public string Name = "";
-        public virtual decimal NetValue => 0;          // overridable
-    }
-
-    public class House : Asset
-    {
-        public decimal Mortgage;
-        public override decimal NetValue => Mortgage;  // override
-    }
-
-    // ── 5. Interface ──────────────────────────────────────────────────────────
-    public interface IDescribable
-    {
-        string Describe();
-    }
-
-    public class Car : IDescribable
-    {
-        public string Model { get; set; } = "";
-        public string Describe() => $"Car model: {Model}";
-    }
-
-    // ── Entry point ───────────────────────────────────────────────────────────
     public class TypesDemo
     {
         public static void Run()
         {
-            Console.WriteLine("=== Ch03: Creating Types ===");
+            Console.WriteLine("=== CH03: Creating Types ===");
+            var o = new Octopus();
+            Console.WriteLine(o.Age);      // 10
 
-            // Classes & static fields
-            var p1 = new Panda("Tai Shan");
-            var p2 = new Panda("Bao Bao");
-            p1.Greet();
-            p2.Greet();
-            Console.WriteLine($"Population: {Panda.Population}");   // 2
+            Console.WriteLine("=== Panda: the 'this' keyword ===");
+            var harry = new Panda("Harry");
+            var mavis = new Panda("Mavis");
+            harry.Marry(mavis);
+            Console.WriteLine(harry.Mate.Name); // Mavis
+            Console.WriteLine(mavis.Mate.Name); // Harry
 
-            // Properties
-            var stock = new Stock { Symbol = "AMZN", Price = 185.5m };
-            Console.WriteLine($"{stock.Symbol}: ${stock.Price}");
+            Console.WriteLine("=== Partial Methods ===");
+            var paymentForm = new PaymentForm(150); // OK
+            // new PaymentForm(50); // would throw ArgumentOutOfRangeException
+        }
+    }
 
-            // Indexer
-            var sentence = new Sentence();
-            Console.WriteLine(sentence[1]);        // quick
-            sentence[1] = "slow";
-            Console.WriteLine(sentence[1]);        // slow
+    class Octopus
+    {
+        string name;
+        public int Age = 10;
+        private static readonly int legs = 8, eyes = 1;
+    }
 
-            // Inheritance & virtual
-            var house = new House { Name = "Beach House", Mortgage = 250_000m };
-            Console.WriteLine($"{house.Name} net value: {house.NetValue}");
+    public class Panda
+    {
+        public string Name;
+        public Panda Mate;
 
-            // Interface
-            IDescribable d = new Car { Model = "Tesla Model S" };
-            Console.WriteLine(d.Describe());
+        public Panda(string name)
+        {
+            Name = name;
+        }
+
+        public void Marry(Panda partner)
+        {
+            Mate = partner;
+            partner.Mate = this;
+        }
+    }
+    // partial methods — definition part
+    partial class PaymentForm
+    {
+        public PaymentForm(decimal amount)
+        {
+            ValidatePayment(amount);
+        }
+        partial void ValidatePayment(decimal amount);
+    }
+
+    // partial methods — implementation part
+    partial class PaymentForm
+    {
+        partial void ValidatePayment(decimal amount)
+        {
+            if (amount < 100) throw new ArgumentOutOfRangeException("amount", "amt too low");
         }
     }
 }
