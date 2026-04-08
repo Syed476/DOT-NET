@@ -1,0 +1,17 @@
+# Build output
+bin/
+obj/
+
+# IDE files
+.idea/
+.vs/
+*.user
+*.suo
+
+# JetBrains Rider
+.run/
+*.DotSettings.user
+
+# User-specific files
+*.rsuser
+*.sln.docstates
